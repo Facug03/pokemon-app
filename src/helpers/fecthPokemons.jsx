@@ -3,8 +3,9 @@ import axios from "axios";
 export const fetchPokemons = async () => {
   const resp = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
   const smallPokemonList = resp.data.results;
+  console.log(import.meta.env.VITE_POKEMONS);
   const response = await axios
-    .get("https://pokemons-back-production.up.railway.app/pokemons")
+    .get(import.meta.env.VITE_POKEMONS)
     .catch((err) => err);
   const create = response.data;
   return transformSmallPokemonIntoPokemon(smallPokemonList, create);
