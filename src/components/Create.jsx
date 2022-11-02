@@ -287,7 +287,10 @@ export default function Create() {
         <div className={styles.pokecreated}>
           <div className={styles.info}>
             <p className={styles.response}>{response}</p>
-            <a className={styles.accept} href="http://localhost:5173">
+            <a
+              className={styles.accept}
+              href="https://pokemon-app-pokedex.vercel.app"
+            >
               Accept
             </a>
           </div>
@@ -297,7 +300,10 @@ export default function Create() {
         <div className={styles.pokecreated}>
           <div className={styles.info}>
             <p className={styles.response}>{errorRes}</p>
-            <a className={styles.accept} href="http://localhost:5173">
+            <a
+              className={styles.accept}
+              href="https://pokemon-app-pokedex.vercel.app"
+            >
               Accept
             </a>
           </div>
