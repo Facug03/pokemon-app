@@ -16,7 +16,7 @@ export default function Main() {
   const [page, setPage] = useState({ current: 1, show: 5 });
   const [currentPage, setCurrentPage] = useState(0);
   const dispatch = useDispatch();
-  console.log(pokemons);
+
   const filteredPokemons = (num) => {
     if (num) {
       if (pokemonsFiltered.length !== 0) {
