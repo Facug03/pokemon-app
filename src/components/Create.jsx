@@ -30,6 +30,7 @@ export default function Create() {
   });
   const [response, setResponse] = useState("");
   const [error, setError] = useState("");
+  const [errorRes, setErrorRes] = useState("");
 
   const handleInput = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -39,8 +40,8 @@ export default function Create() {
     ev.preventDefault();
     const validate = validateSubmit(form);
     if (validate) {
-      axios
-        .post(import.meta.env.VITE_POKEMONS, {
+      try {
+        axios.post(import.meta.env.VITE_POKEMONS, {
           pokemon: {
             name: form.name,
             hp: Number(form.hp),
@@ -54,25 +55,30 @@ export default function Create() {
           },
           primary: form.primary,
           secondary: form.secondary,
-        })
-        .then((res) => {
-          setResponse(res.data.created);
-          setErr({
-            ...err,
-            name: "",
-            hp: "",
-            attack: "",
-            defense: "",
-            speed: "",
-            defesp: "",
-            atesp: "",
-            url: "",
-            primary: "",
-            secondary: "",
-          });
-          setError("");
-        })
-        .catch((err) => setError(err.response.data.error));
+        });
+        setResponse(res.data.created);
+        setErr({
+          ...err,
+          name: "",
+          hp: "",
+          attack: "",
+          defense: "",
+          speed: "",
+          defesp: "",
+          atesp: "",
+          url: "",
+          primary: "",
+          secondary: "",
+        });
+        setError("");
+      } catch (error) {
+        if (error.response?.data) {
+          setErrorRes(error.response.data.error);
+        } else {
+          console.log(error);
+          setErrorRes("Ha ocurrido un error");
+        }
+      }
     } else {
       setErr({
         ...err,
@@ -281,6 +287,16 @@ export default function Create() {
         <div className={styles.pokecreated}>
           <div className={styles.info}>
             <p className={styles.response}>{response}</p>
+            <a className={styles.accept} href="http://localhost:5173">
+              Accept
+            </a>
+          </div>
+        </div>
+      )}
+      {errorRes && (
+        <div className={styles.pokecreated}>
+          <div className={styles.info}>
+            <p className={styles.response}>{errorRes}</p>
             <a className={styles.accept} href="http://localhost:5173">
               Accept
             </a>
