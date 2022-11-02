@@ -1,0 +1,392 @@
+.cardcontainer {
+    width: 300px;
+    height: 150px;
+    background-color: #fff;
+    padding: 20px 10px;
+    align-content: center;
+    display: flex;
+    border: 2px solid #333;
+    box-shadow: -2px 4px 0 #888, -4px 6px 0 #333;
+    transition: 0.4s ease;
+}
+
+.pokemonModal {
+    transition: 3s ease;
+}
+
+.cardcontainer:hover {
+    transform: scaleX(1.10) scaleY(1.10);
+}
+
+.notfound {
+    max-width: 1018px;
+    min-height: 170px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 42px 40px 32px;
+    border-radius: 4px;
+}
+
+.notfoundtitle {
+    font-family: 'RobotoMonoSemi';
+    font-size: 24px;
+}
+
+.imfound {
+    height: 70px;
+    width: 70px;
+    margin-right: 35px;
+}
+
+.listul {
+    padding-left: 20px ;
+    margin-top: 20px;
+}
+
+.list {
+    font-family: 'RobotoMono';
+    font-size: 16px;
+}
+
+.pokecard {
+    display: flex;
+    align-items: center;
+}
+
+.imagepoke {
+    width: 95px;
+    height: 95px;
+    border: 2px solid #333;
+    object-fit: contain;
+    padding: 5px;
+    background-color: rgb(214, 202, 202);
+    cursor: pointer;
+}
+
+.data {
+    font-family: 'RobotoMono';
+}
+
+.idpoke {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.namepoke {
+    text-transform: capitalize;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.type {
+   font-size: 12px;
+   padding: 3px;
+   border: 1px solid #333;
+   margin-right: 3px;
+}
+
+.type2 {
+    font-size: 12px;
+    padding: 3px;
+    border: 1px solid #333;
+}
+
+.detailright {
+    position: relative;
+    background-color: #aa2946;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #333;
+    top: -58px;
+    left: 73px;
+    z-index: 1;
+}
+
+.detailleft {
+    position: relative;
+    background-color: #aa2946;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #333;
+    top: -58px;
+    left: 43px;
+    z-index: 1;
+}
+
+.middledetail {
+    width: 30px;
+    padding: 30px 10px;
+}
+
+hr {
+    border: 1px solid #333;
+}
+
+@media (max-width: 907px) {
+    .cardcontainer {
+        width: 275px;
+        height: 150px;
+        padding: 5px;
+    }
+    .data {
+        margin-top: 14px;
+    }
+    .type {
+        font-size: 11px;
+    }
+     
+     .type2 {
+        font-size: 11px;
+    }
+    .middledetail {
+        padding: 40px 10px;
+    }
+}
+
+
+@media (max-width: 855px) {
+    .cardcontainer {
+        width: 265px;
+        height: 150px;
+        padding: 3px;
+    }
+    .namepoke {
+        font-size: 16px;
+    }
+    .idpoke {
+        font-size: 13px;
+    }
+    .imagepoke {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+@media (max-width: 584px) {
+    .cardcontainer {
+        width: 250px;
+        height: 135px;
+    }
+    .pokecard {
+        width: 95px;
+    }
+    .detailright {
+        left: 61px;
+        top: -52px;
+        width: 8px;
+        height: 8px;
+    }
+    .detailleft {
+        top: -52px;
+        left: 36px;
+        width: 8px;
+        height: 8px;
+    }
+    .imagepoke {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 554px) {
+    .cardcontainer {
+        width: 230px;
+        height: 135px;
+    }
+    .middledetail { 
+        padding: 40px 5px 20px 5px;
+        width: 18px;
+    }
+    .type {
+        font-size: 9.5px;
+    }
+    .type2 {
+        font-size: 9.5px;
+    }
+}
+
+@media (max-width: 504px) {
+    .cardcontainer {
+        width: 220px;
+        height: 135px;
+    }
+    .types {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1px;
+    }
+    .type {
+        font-size: 9.5px;
+    }
+    .type2 {
+        font-size: 9.5px;
+    }
+    .detailright {
+        left: 59px;
+        top: -52px;
+        width: 7px;
+        height: 7px;
+    }
+    .detailleft {
+        top: -52px;
+        left: 36px;
+        width: 7px;
+        height: 7px;
+    }
+    .notfound {
+        flex-direction: column;
+        padding: 38px 35px 30px;
+    }
+    .imfound {
+        margin: 0;
+    }
+}
+
+@media (max-width: 483px) {
+    .cardcontainer {
+        width: 300px;
+        height: 150px;
+        padding: 20px 10px;
+    }
+    .pokecard {
+        height: auto;
+        width: auto;
+    }
+    .type {
+        font-size: 12px;
+        padding: 3px;
+        margin-right: 3px;
+    }
+    .type2 {
+        font-size: 12px;
+        padding: 3px;
+    }
+    .detailright {
+        width: 10px;
+        height: 10px;
+        top: -58px;
+        left: 73px;
+    }
+    .detailleft {
+        width: 10px;
+        height: 10px;
+        top: -58px;
+        left: 43px;
+    }
+    .middledetail {
+        width: 30px;
+        padding: 30px 10px;
+    }
+    .imagepoke {
+        width: 95px;
+        height: 95px;
+        padding: 5px;
+    }
+    .idpoke {
+        font-size: 14px;
+    }
+    .namepoke {
+        font-size: 17px;
+    }
+    .data {
+        margin-top: 0px;
+    }
+    .notfoundtitle {
+        font-size: 22px;
+    }
+    .list {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 345px) {
+    .cardcontainer {
+        width: 265px;
+        height: 150px;
+        padding: 3px;
+    }
+    .pokecard {
+        height: auto;
+        width: auto;
+    }
+    .detailright {
+        width: 10px;
+        height: 10px;
+        top: -58px;
+        left: 69px
+    }
+    .detailleft {
+        width: 10px;
+        height: 10px;
+        top: -58px;
+        left: 37px;
+    }
+    .namepoke {
+        font-size: 16px;
+    }
+    .idpoke {
+        font-size: 13px;
+    }
+    .imagepoke {
+        width: 85px;
+        height: 85px;
+    }
+    .data {
+        margin-top: 14px;
+    }
+    .type {
+        font-size: 11px;
+    }
+     
+    .type2 {
+        font-size: 11px;
+    }
+    .middledetail {
+        padding: 40px 10px;
+    }
+    .notfound {
+        padding: 36px 30px 28px;
+    }
+    .notfoundtitle {
+        font-size: 20px;
+    }
+    .list {
+        font-size: 12px;
+    }
+    .imfound {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+
+@media (max-width: 315px) {
+    .cardcontainer {
+        width: 250px;
+        height: 135px;
+    }
+    .pokecard {
+        width: 95px;
+    }
+    .detailright {
+        left: 58px;
+        top: -52px;
+        width: 7px;
+        height: 7px;
+    }
+    .detailleft {
+        top: -52px;
+        left: 36px;
+        width: 7px;
+        height: 7px;
+    }
+    .imagepoke {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+

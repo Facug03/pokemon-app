@@ -1,0 +1,43 @@
+export const typeColor = {
+  grass: '#84d45e',
+  fire: '#d31710',
+  poison: '#7b2f91',
+  flying: '#a4e4d5',
+  bug: '#729f3f',
+  fighting: '#bb5544',
+  ground: '#ddbb55',
+  rock: '#a38c21',
+  ghost: '#444477',
+  steel: '#999999',
+  water: '#3399ff',
+  electric: '#eed535',
+  psychic: '#ff5599',
+  ice: '#77ddff',
+  dragon: '#7766ee',
+  dark: '#5b597e',
+  fairy: '#ffaaff',
+  unknown: '#68a090',
+  shadow: '#49334f'
+}
+
+export const typeText = {
+  grass: '#000000',
+  fire: '#fff',
+  poison: '#fff',
+  flying: '#000000',
+  bug: '#000000',
+  ground: '#000000',
+  fighting: '#fff',
+  rock: '#000000',
+  ghost: '#000000',
+  steel: '#000000',
+  water: '#000000',
+  electric: '#000000',
+  psychic: '#000000',
+  ice: '#000000',
+  dragon: '#000000',
+  dark: '#000000',
+  fairy: '#000000',
+  unknown: '#000000',
+  shadow: '#000000'
+}

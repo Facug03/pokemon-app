@@ -1,0 +1,239 @@
+.filtro {
+    width: 300px;
+    height: 775px;
+    background-color: #ffffff;
+    font-family: 'RobotoMono';
+    padding: 10px;
+}
+
+.filtertitle {
+    padding: 10px 0;
+    text-shadow: 0 0 6px #144e05bd;
+    text-align: center;
+    border: 2px solid #333;
+    background-color: #24ae00;
+    box-shadow: 0 0 7px 1px #24ae00;
+    border-radius: 6px;
+}
+
+.typetitle {
+    margin: 10px 0;
+    width: 100%;
+    font-size: 20px;
+}
+
+.typefilter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.types {
+    margin: 2.5px 0;
+    font-size: 15px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.orderorigin {
+    margin: 2.5px 0;
+    font-size: 15px;
+    width: 180px;
+    cursor: pointer;
+}
+
+.ordertype {
+    margin: 2.5px 0;
+    font-size: 15px;
+    width: 90px;
+    cursor: pointer;
+}
+
+.show {
+    width: 180px;
+    margin-bottom: 10px;
+}
+
+.filtershow {
+    margin: 0;
+    font-size: 15px;
+    background-color: #ededed;
+    padding: 3px 5px;
+}
+
+.iconx {
+    width: 16px; 
+    height:16px;
+    cursor: pointer;
+}
+
+.filticon {
+    display: none;
+}
+
+.primaryorder {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.orderby {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.originorder {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 857px) {
+    .filtro {
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid #333;
+    }
+    .filtertitle {
+        width: 300px;
+        margin: 15px auto;
+    }
+    .types {
+        width: 82px;
+    }
+    .show {
+        display: inline;
+        margin-right: 5px;
+    }
+    .orderorigin {
+        width: 130px;
+    }
+
+}
+
+@media (max-width: 655px) {
+    .types {
+        font-size: 13px;
+        width: 75px;
+    }
+    .orderorigin {
+        font-size: 13px;
+        width: 80px;
+    }
+    .ordertype {
+        font-size: 13px;
+    }
+    .filtershow {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 395px) {
+    .typetitle {
+        margin-left: 5px;
+        font-size: 15px;
+        height: 100px;
+    }
+    .filticon {
+        display: block;
+        background-color: #ffffff;
+        border-bottom: 2px solid #333;
+    }
+    .filtimg {
+        margin-left: 5px;
+        width: 45px;
+        cursor: pointer;
+    }
+    .filtro {
+        position: absolute;
+        height: fit-content;
+        width: 215px;
+        border-radius: 5px;
+        left: -400px;
+        top: 265px;
+        padding: 0;
+        transition: 0.4s ease;
+        z-index: 50;
+    }
+    .filtertitle {
+        width: 150px;
+        margin-left: 5px;
+        text-align: justify;
+        font-size: 18px;
+        padding: 0;
+        text-shadow: none;
+        border: none;
+        background-color: unset;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .origintitle {
+        height: 75px;
+    }
+    .originorder {
+        position: absolute;
+        display: flex;
+        left: 10px;
+        top: 80px;
+        flex-direction: column;
+    }
+    .primaryorder {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        left: 10px;
+        top: 178px;
+    }
+    .typeprimary {
+        height: 145px;
+    }
+    .orderby {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        left: 10px;
+        top: 345px;
+    }
+    .types {
+        font-size: 12px;
+        width: 65px;
+    }
+    .active {
+        top: 265px;
+        left: 10px;
+        z-index: 1000;
+    }
+    .back {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 50;
+    }
+    .hr {
+        margin: 0.5px;
+    }
+    .showtype {
+        position: absolute;
+        top: 154px;
+        left: 55px;
+    }
+    .filtershow {
+        font-size: 11px;
+        margin: 0;
+    }
+    .iconx {
+        width: 14px;
+        height: 14px;
+    }
+    .showorder {
+        position: absolute;
+        top: 322px;
+        left: 59px;
+    }
+    .showorigin {
+        position: absolute;
+        top: 56px;
+        left: 70px;
+    }
+}

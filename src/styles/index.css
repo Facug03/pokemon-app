@@ -1,0 +1,23 @@
+@import './normalize.css';
+@font-face {
+  font-family: 'RobotoMono';
+  src: local('RobotoMono'), url(../fonts/RobotoMono-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoMonoSemi';
+  src: local('RobotoMonoSemi'), url(../fonts/RobotoMono-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'FireRed';
+  src: local('FireRed'), url(../fonts/VPPixel-Simplified.otf) format('truetype');
+}
+
+body {
+  padding: 0 5px;
+  background-color: #e32931;
+  max-width: 1290px;
+  margin: auto;
+}
+

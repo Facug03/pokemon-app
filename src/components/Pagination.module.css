@@ -1,0 +1,84 @@
+.button {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    font-family: 'RobotoMonoSemi';
+}
+
+.buttonprev {
+    cursor: pointer;
+    width: 75px;
+    border: 2px solid #333;
+    box-shadow: -3px 4px 0 #888, -5px 6px 0 #333;
+    border-bottom-left-radius: 10px;
+}
+
+.buttonnext {
+    cursor: pointer;
+    width: 75px;
+    border: 2px solid #333;
+    box-shadow: -3px 4px 0 #888, -5px 6px 0 #333;
+    border-bottom-right-radius: 10px;
+}
+
+.nobutton {
+    width: 64px;
+    height: 24px;
+}
+
+.page {
+    font-family: 'RobotoMono';
+}
+
+.pagesbutton {
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid #333;
+    box-shadow: -1px 1px 0 #888, -3px 3px 0 #333;
+    padding: 2px 5px;
+    margin: 0 2px;
+}
+
+.current {
+   color: #ffffff;
+   background: #e32931;
+}
+
+.active {
+    display: none;
+}
+
+
+@media (max-width: 465px) {
+    .buttonnext {
+        width: 60px;
+    }
+    .buttonprev {
+        width: 60px;
+    }
+}
+
+@media (max-width: 425px) {
+    .button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 425px) {
+    .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 305px) {
+    .buttonnext {
+        width: 50px;
+    }
+    .buttonprev {
+        width: 50px;
+    }
+    .pagesbutton {
+        width: 22px;
+    }
+}
