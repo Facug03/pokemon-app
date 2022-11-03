@@ -5,7 +5,7 @@ export const fetchPokemons = async () => {
   const smallPokemonList = resp.data.results;
 
   const response = await axios
-    .get(import.meta.env.VITE_POKEMONS)
+    .get(`${import.meta.env.VITE_POKEMONS}/pokemons`)
     .catch((err) => err);
   const create = response.data;
   return transformSmallPokemonIntoPokemon(smallPokemonList, create);
