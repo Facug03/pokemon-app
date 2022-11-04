@@ -17,7 +17,16 @@
 body {
   padding: 0 5px;
   background-color: #e32931;
-  max-width: 1290px;
+  max-width: 1500px;
   margin: auto;
 }
+
+/* 
+@media (min-width: 1600px) {
+  body {
+    width: 1500px;
+  }
+} */
+
+
 

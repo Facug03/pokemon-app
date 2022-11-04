@@ -180,6 +180,17 @@ select::-ms-expand {
     display: none;
 }
 
+@media (min-width: 1450px) {
+    .container {
+        height: 700px;
+        width: 550px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 15px;
+        box-shadow: -2px 4px 0 #888, -4px 6px 0 #333;
+    }
+}
+
 @media (max-width: 560px) {
     .container {
         width: 400px;

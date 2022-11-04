@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Pokemon from "./Pokemon";
-import styles from "./PokeCard.module.css";
-import { typeColor, typeText } from "../helpers/colorType";
-import image from "../img/not-found.png";
+import { useState } from 'react'
+import Pokemon from './Pokemon'
+import styles from './PokeCard.module.css'
+import { typeColor, typeText } from '../helpers/colorType'
+import image from '../img/not-found.png'
 
-export default function PokeCard({
+export default function PokeCard ({
   id,
   name,
   types,
@@ -17,24 +17,24 @@ export default function PokeCard({
   speed,
   url,
   created,
-  search,
+  search
 }) {
-  const [modal, setModal] = useState(false);
-  const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`;
-  let idPoke = "";
+  const [modal, setModal] = useState(false)
+  const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
+  let idPoke = ''
 
   if (id.toString().length === 1) {
-    idPoke = `N.º 00${id}`;
+    idPoke = `N.º 00${id}`
   } else if (id.toString().length === 2) {
-    idPoke = `N.º 0${id}`;
+    idPoke = `N.º 0${id}`
   } else {
-    idPoke = `N.º ${id}`;
+    idPoke = `N.º ${id}`
   }
 
   if (filter) {
     return (
       <div className={styles.notfound}>
-        <img className={styles.imfound} src={image} alt="not-found" />
+        <img className={styles.imfound} src={image} alt='not-found' />
         <div className={styles.notfoundtitle}>
           {filter}
           {search && (
@@ -45,7 +45,7 @@ export default function PokeCard({
           )}
         </div>
       </div>
-    );
+    )
   }
   return (
     <>
@@ -57,7 +57,7 @@ export default function PokeCard({
             onClick={() => setModal(true)}
             className={styles.imagepoke}
             src={url || img}
-            alt="pokemon"
+            alt='pokemon'
           />
         </div>
         <div className={styles.middledetail}>
@@ -76,7 +76,7 @@ export default function PokeCard({
             <span
               style={{
                 backgroundColor: typeColor[types[0]],
-                color: typeText[types[0]],
+                color: typeText[types[0]]
               }}
               className={styles.type}
             >
@@ -86,7 +86,7 @@ export default function PokeCard({
               <span
                 style={{
                   backgroundColor: typeColor[types[1]],
-                  color: typeText[types[1]],
+                  color: typeText[types[1]]
                 }}
                 className={styles.type2}
               >
@@ -114,5 +114,5 @@ export default function PokeCard({
         created={created}
       />
     </>
-  );
+  )
 }

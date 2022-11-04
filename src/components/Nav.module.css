@@ -4,10 +4,9 @@
     background-color: #e32931;
     justify-content: space-between;
     height: 100px;
-    border: 2px solid #333;
-    border-top: none;
+    margin: 0 auto;
     margin-bottom: 10px;
-    box-shadow: 0px 4px 0 #888, 0px 6px 0 #333;
+    max-width: 1300px;
 }
 
 .image {
@@ -148,6 +147,8 @@
 }
 
 @media (max-width: 840px) {
+    
+
     .search {
         height: 35px;
         width: 200px;
@@ -166,6 +167,12 @@
 }
 
 @media (max-width: 690px) {
+    .nav {
+        border: 2px solid #333;
+        border-top: none;
+        box-shadow: 0px 4px 0 #888, 0px 6px 0 #333;
+    }
+
     .search {
         height: 35px;
         width: 150px;

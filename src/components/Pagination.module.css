@@ -50,6 +50,24 @@
 }
 
 
+@media (min-width: 1450px) {
+    .pagesbutton {
+        font-size: 17px;
+        margin: 0 2px;
+    }
+
+    .buttonprev {
+        width: 90px;
+        font-size: 17px;
+    }
+    
+    .buttonnext {
+        width: 90px;
+        font-size: 17px;
+    }
+}
+
+
 @media (max-width: 465px) {
     .buttonnext {
         width: 60px;
