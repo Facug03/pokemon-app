@@ -1,66 +1,62 @@
-import { useState, useEffect } from "react";
-import PokeCard from "./PokeCard";
-import Loading from "./Loading";
-import Filter from "./Filter";
-import styles from "./Main.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import Pagination from "./Pagination";
-import { resetPage } from "../redux/slice";
+import { useState, useEffect } from 'react'
+import PokeCard from './PokeCard'
+import Loading from './Loading'
+import Filter from './Filter'
+import styles from './Main.module.css'
+import { useSelector, useDispatch } from 'react-redux'
+import Pagination from './Pagination'
+import { resetPage } from '../redux/slice'
 
-export default function Main() {
-  const pokemons = useSelector((state) => state.pokemon.pokemons);
+export default function Main () {
+  const pokemons = useSelector((state) => state.pokemon.pokemons)
   const pokemonsFiltered = useSelector(
     (state) => state.pokemon.pokemonsFiltered
-  );
-  const reset = useSelector((state) => state.pokemon.reset);
-  const [page, setPage] = useState({ current: 1, show: 5 });
-  const [currentPage, setCurrentPage] = useState(0);
-  const dispatch = useDispatch();
+  )
+  const reset = useSelector((state) => state.pokemon.reset)
+  const [page, setPage] = useState({ current: 1, show: 5 })
+  const [currentPage, setCurrentPage] = useState(0)
+  const dispatch = useDispatch()
 
   const filteredPokemons = (num) => {
     if (num) {
       if (pokemonsFiltered.length !== 0) {
-        return pokemonsFiltered.slice(currentPage, currentPage + 12);
+        return pokemonsFiltered.slice(currentPage, currentPage + 12)
       } else {
-        return pokemons.slice(currentPage, currentPage + 12);
+        return pokemons.slice(currentPage, currentPage + 12)
       }
     }
     if (pokemonsFiltered.length !== 0) {
-      return pokemonsFiltered.slice(currentPage, currentPage + 12);
+      return pokemonsFiltered.slice(currentPage, currentPage + 12)
     }
-    return pokemons.slice(currentPage, currentPage + 12);
-  };
+    return pokemons.slice(currentPage, currentPage + 12)
+  }
 
   useEffect(() => {
     if (reset) {
-      setCurrentPage(0);
-      setPage({ ...page, current: 1, show: 5 });
-      dispatch(resetPage(false));
+      setCurrentPage(0)
+      setPage({ ...page, current: 1, show: 5 })
+      dispatch(resetPage(false))
     }
-  }, [reset, page, dispatch]);
+  }, [reset, page, dispatch])
 
   const nextPage = () => {
     if (currentPage + 12 < pokemons.length) {
-      setCurrentPage(currentPage + 12);
-      if (page.current % 5 === 0)
-        setPage({ ...page, show: page.show + 5, current: page.current + 1 });
-      else setPage({ ...page, current: page.current + 1 });
+      setCurrentPage(currentPage + 12)
+      if (page.current % 5 === 0) { setPage({ ...page, show: page.show + 5, current: page.current + 1 }) } else setPage({ ...page, current: page.current + 1 })
     }
-  };
+  }
 
   const prevPage = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 12);
-      if ((page.current - 1) % 5 === 0)
-        setPage({ ...page, show: page.show - 5, current: page.current - 1 });
-      else setPage({ ...page, current: page.current - 1 });
+      setCurrentPage(currentPage - 12)
+      if ((page.current - 1) % 5 === 0) { setPage({ ...page, show: page.show - 5, current: page.current - 1 }) } else setPage({ ...page, current: page.current - 1 })
     }
-  };
+  }
 
   const handlePage = (num) => {
-    setPage({ ...page, current: num + 1 });
-    setCurrentPage(num * 12);
-  };
+    setPage({ ...page, current: num + 1 })
+    setCurrentPage(num * 12)
+  }
 
   return (
     <div className={styles.main}>
@@ -98,5 +94,5 @@ export default function Main() {
         />
       </section>
     </div>
-  );
+  )
 }

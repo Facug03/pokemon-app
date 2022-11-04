@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import styles from './Create.module.css'
+import Loading from './Loading'
 
 export default function Create () {
   const [form, setForm] = useState({
@@ -31,17 +32,19 @@ export default function Create () {
   const [response, setResponse] = useState('')
   const [error, setError] = useState('')
   const [errorRes, setErrorRes] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleInput = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault()
     const validate = validateSubmit(form)
     if (validate) {
+      setLoading(true)
       try {
-        axios.post(import.meta.env.VITE_POKEMONS, {
+        const res = await axios.post(`${import.meta.env.VITE_POKEMONS}/pokemons`, {
           pokemon: {
             name: form.name,
             hp: Number(form.hp),
@@ -71,13 +74,14 @@ export default function Create () {
           secondary: ''
         })
         setError('')
+        setLoading(false)
       } catch (error) {
         if (error.response?.data) {
           setErrorRes(error.response.data.error)
         } else {
-          console.log(error)
           setErrorRes('Ha ocurrido un error')
         }
+        setLoading(false)
       }
     } else {
       setErr({
@@ -281,7 +285,9 @@ export default function Create () {
           </div>
           <p className={styles.select}>{err.type}</p>
         </div>
-        <button className={styles.buttoncreate}>Create</button>
+        {!loading
+          ? <button className={styles.buttoncreate}>Create</button>
+          : <div className={styles.loaderContainer}><div className={styles.loader} /></div>}
       </form>
       {response && (
         <div className={styles.pokecreated}>
