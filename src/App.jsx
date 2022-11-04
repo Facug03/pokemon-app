@@ -14,6 +14,7 @@ function App () {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/create' element={<Create />} />
+        <Route path='*' element={<Main />} />
       </Routes>
       <Footer />
     </>
