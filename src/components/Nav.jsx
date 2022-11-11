@@ -19,18 +19,10 @@ export default function Nav () {
     setCurrent(false)
   }
 
-  const handleSearch = (e) => {
-    e.preventDefault()
-    dispatch(searchPokemon(e.target[0].value))
-  }
-
   const handleChange = e => {
-    if (!e) {
-      setSearch('')
-      dispatch(searchPokemon(''))
-    } else {
-      dispatch(resetPage(true))
-      setSearch(e.target.value)
+    dispatch(resetPage(true))
+    setSearch(e.target.value)
+    if (e.target.value.length < 10) {
       dispatch(searchPokemon(e.target.value))
     }
   }
@@ -43,11 +35,16 @@ export default function Nav () {
           <img className={styles.title} src={logo} alt='logo' />
         </div>
       </Link>
-      <form className={styles.searchbar} onSubmit={handleSearch}>
+      <form className={styles.searchbar} onSubmit={(e) => e.preventDefault()}>
         <input value={search} onChange={e => handleChange(e)} placeholder='Search Pokemon...' className={styles.search} type='text' />
-        <input type='submit' className={styles.searchicon} />
+        <input onClick={(e) => handleChange(e)} type='submit' className={styles.searchicon} />
         {search.length !== 0 &&
-          <svg onClick={() => handleChange()} viewBox='0 0 24 24' className={styles.clean} focusable='false'><g><path d='M12.7,12l6.6,6.6l-0.7,0.7L12,12.7l-6.6,6.6l-0.7-0.7l6.6-6.6L4.6,5.4l0.7-0.7l6.6,6.6l6.6-6.6l0.7,0.7L12.7,12z' /></g></svg>}
+          <svg
+            onClick={() => {
+              setSearch('')
+              dispatch(searchPokemon(''))
+            }} viewBox='0 0 24 24' className={styles.clean} focusable='false'
+          ><g><path d='M12.7,12l6.6,6.6l-0.7,0.7L12,12.7l-6.6,6.6l-0.7-0.7l6.6-6.6L4.6,5.4l0.7-0.7l6.6,6.6l6.6-6.6l0.7,0.7L12.7,12z' /></g></svg>}
       </form>
 
       <div className={styles.create}>
